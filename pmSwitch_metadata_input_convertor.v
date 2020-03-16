@@ -4,11 +4,11 @@
 // korakit@virginia.edu
 
 
-module addrGen(
+module pmSwitch_metadata_input(
     input [31:0] hashedAddress,
     input [7:0] PMSwitchOPS,
     input [7:0] ackCount,
     output [47:0] meta_input
     );
-assign meta_input = (ackCount, PMSwitchOPS, hashedAddress);
+assign meta_input = {ackCount, PMSwitchOPS, hashedAddress};
 endmodule

@@ -4,7 +4,7 @@
 // korakit@virginia.edu
 
 
-module addrGen(
+module pmSwitch_metadata_output(
     input [47:0] meta_output,
     output [31:0] hashedAddress,
     output [7:0] PMSwitchOPS,
