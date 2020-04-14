@@ -33,13 +33,13 @@ input m_addr_axis_tready
     );
 assign m_packet_axis_tdata = s_packet_axis_tdata;
 assign m_packet_axis_tdest = s_addr_axis_tdata;
-assign m_addr_axis_tdata = s_addr_axis_tdata;
 assign m_packet_axis_tkeep = s_packet_axis_tkeep;
+assign m_addr_axis_tdata = s_addr_axis_tdata;
 assign m_addr_axis_tdest = m_addr_axis_tdata;
 
 assign m_packet_axis_tvalid = s_packet_axis_tvalid && s_addr_axis_tvalid;
 assign m_packet_axis_tlast = s_packet_axis_tlast;
-assign s_packet_axis_tready = s_addr_axis_tvalid && m_packet_axis_tready;
+assign s_packet_axis_tready = s_addr_axis_tvalid && m_packet_axis_tready && m_addr_axis_tready;
 assign s_addr_axis_tready = m_packet_axis_tvalid && m_packet_axis_tlast && m_packet_axis_tready && m_addr_axis_tready;
 
 assign m_addr_axis_tvalid = s_addr_axis_tvalid && s_addr_axis_tready;
