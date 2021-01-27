@@ -39,8 +39,8 @@ reg [9:0] dataCtr;
 assign M0_AXIS_TDATA = S0_AXIS_TDATA;
 assign S0_AXIS_TREADY = M0_AXIS_TREADY;
 assign M0_AXIS_TKEEP = S0_AXIS_TKEEP;
-assign M0_AXIS_TVALID = S0_AXIS_TVALID && !(dataCtr > 10'd6);
-assign M0_AXIS_TLAST = S0_AXIS_TLAST || !(dataCtr < 10'd6);
+assign M0_AXIS_TVALID = S0_AXIS_TVALID && !(dataCtr > 10'd7);
+assign M0_AXIS_TLAST = S0_AXIS_TLAST || !(dataCtr < 10'd7);
 
 
 always@(posedge clk)begin
