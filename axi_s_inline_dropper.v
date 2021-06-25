@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-// AXI-stream packet dropper. For use with AXI-Stream switch IP.
+// AXI-stream packet dropper.
 // Korakit Seemakhupt
 // korakit@virginia.edu
 module axi_s_inline_dropper(
@@ -24,6 +24,7 @@ assign m_packet_axis_tdata = s_packet_axis_tdata;
 assign m_packet_axis_tvalid = s_packet_axis_tvalid && dropn;
 assign m_packet_axis_tlast = s_packet_axis_tlast;
 assign m_packet_axis_tkeep = s_packet_axis_tkeep;
-assign s_packet_axis_tready = m_packet_axis_tready && dropn;
+// Need to keep the m_axis sending
+assign s_packet_axis_tready = m_packet_axis_tready;
     
 endmodule
