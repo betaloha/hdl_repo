@@ -21,9 +21,9 @@ input m_packet_axis_tready
 
     );
 assign m_packet_axis_tdata = s_packet_axis_tdata;
-assign m_packet_axis_tvalid = m_packet_axis_tvalid && dropn;
-assign m_packet_axis_tlast = m_packet_axis_tlast;
-assign m_packet_axis_tkeep = m_packet_axis_tkeep;
+assign m_packet_axis_tvalid = s_packet_axis_tvalid && dropn;
+assign m_packet_axis_tlast = s_packet_axis_tlast;
+assign m_packet_axis_tkeep = s_packet_axis_tkeep;
 assign s_packet_axis_tready = m_packet_axis_tready && dropn;
     
 endmodule
